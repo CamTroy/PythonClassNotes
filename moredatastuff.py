@@ -31,3 +31,13 @@ print(f"Average score: {avg_score}")
 
 scores = data[:, 0]
 avg_score = np.mean(avg_score)
+
+math_scores = data[:, 0]
+
+# Masks
+# Arithmetic operators against a full array
+failing_mask = data < 70
+results = np.any(failing_mask, axis=1)
+
+print(f"Filing any subject {failing_mask}")
+print(f"Students that are failing: {np.where(results)[0]}")
